@@ -35,13 +35,35 @@ namespace CS2312 {
             typedef std::forward_iterator_tag iterator_category;
             typedef size_type difference_type;
 
-            iterator(pointer ptr);
-            self_type operator++();
-            self_type operator++(int junk);
-            reference operator*();
-            pointer operator->();
-            bool operator==(const self_type& rhs) const;
-            bool operator!=(const self_type& rhs) const;
+// Empty functions need filled
+            iterator(pointer ptr)
+            {
+                __ptr = ptr;
+            }
+            self_type operator++()
+            {
+
+            }
+            self_type operator++(int junk)
+            {
+
+            }
+            reference operator*()
+            {
+
+            }
+            pointer operator->()
+            {
+
+            }
+            bool operator==(const self_type& rhs) const
+            {
+
+            }
+            bool operator!=(const self_type& rhs) const
+            {
+
+            }
 
         private:
 
@@ -60,13 +82,35 @@ namespace CS2312 {
             typedef std::forward_iterator_tag iterator_category;
             typedef size_type difference_type;
 
-            const_iterator(pointer ptr);
-            self_type operator++();
-            self_type operator++(int junk);
-            const value_type& operator*() const;
-            const value_type* operator->() const;
-            bool operator==(const self_type& rhs) const;
-            bool operator!=(const self_type& rhs) const;
+// empty functions need filled
+            const_iterator(pointer ptr)
+            {
+                __ptr = ptr;
+            }
+            self_type operator++()
+            {
+
+            }
+            self_type operator++(int junk)
+            {
+
+            }
+            const value_type& operator*() const
+            {
+
+            }
+            const value_type* operator->() const
+            {
+
+            }
+            bool operator==(const self_type& rhs) const
+            {
+
+            }
+            bool operator!=(const self_type& rhs) const
+            {
+
+            }
 
         private:
 
@@ -74,26 +118,58 @@ namespace CS2312 {
 
         };
 
+// Even more empty functions
+        fixed_array(size_type size)
+        {
+            __size = size;
 
-        fixed_array(size_type size);
+        }
 
-        fixed_array(std::initializer_list<T> list);
+        fixed_array(std::initializer_list<T> list)
+        {
+            __size == list.size();
 
-        ~fixed_array();
+        }
 
-        size_type size() const;
+        ~fixed_array()
+        {
 
-        T& operator[](size_type index);
+        }
 
-        const T& operator[](size_type index) const;
+        size_type size() const
+        {
+            return __size;
+        }
 
-        iterator begin();
+        T& operator[](size_type index)
+        {
 
-        iterator end();
+        }
 
-        const_iterator begin() const;
+        const T& operator[](size_type index) const
+        {
 
-        const_iterator end() const;
+        }
+
+        iterator begin()
+        {
+
+        }
+
+        iterator end()
+        {
+
+        }
+
+        const_iterator begin() const
+        {
+
+        }
+
+        const_iterator end() const
+        {
+
+        }
 
     private:
 
