@@ -146,7 +146,6 @@ void test_iterator_smoketest(ErrorContext &ec) {
 
         for (auto it = point3d.begin(); it != point3d.end(); ++it)
             ;
-
         // const object + const_iterator
         const fixed_array<double> cpoint3d = { 2.3, 3.2, 4.2 };
 

@@ -27,6 +27,7 @@ namespace CS2312 {
         class iterator {
 
         public:
+            // so made up type classes that I didn't make and he hasn't specified what exactly they are
 
             typedef iterator self_type;
             typedef T value_type;
@@ -36,37 +37,57 @@ namespace CS2312 {
             typedef size_type difference_type;
 
 // Empty functions need filled
+        // these functions allow the data to be altered.
             iterator(pointer ptr)
             {
                 __ptr = ptr;
             }
             self_type operator++()
             {
-
+                // move my raw pointer forward one. Raw pointer to what?
+                // I have T* which is a type he's called star
+                // I return whatever this is now pointing to
+                __ptr++;
+                return *this;
             }
             self_type operator++(int junk)
             {
-
+                // junk. Yeah, that's f'king descriptive. Is it where I am starting. + int would be adding.
+                // am I starting at junk?
+                std::cout << "GREEN\n";
+                return *this;
             }
             reference operator*()
             {
-
+                // send back only the data that the pointer is point to.
+                // but it doesn't like that because iterator doesn't have a field data.
+                // iterator_catagory;
+                std::cout << "blue1\n";
             }
             pointer operator->()
             {
-
+                // pointing at something. The book doesn't even mention these
+                std::cout << "blue4\n";
             }
             bool operator==(const self_type& rhs) const
             {
-
+                // compare what this is point to to what the hrs has
+                if (__ptr == rhs.__ptr)
+                    return true;
+                else
+                    return false;
             }
             bool operator!=(const self_type& rhs) const
             {
-
+                // compare again and look for them not to be equal
+                if (__ptr == rhs.__ptr)
+                    return false;
+                else
+                    return true;
             }
 
         private:
-
+            // Something I understand a pointer
             pointer __ptr;
 
         };
@@ -83,33 +104,41 @@ namespace CS2312 {
             typedef size_type difference_type;
 
 // empty functions need filled
+        // these functions do not allow the data to be altered
             const_iterator(pointer ptr)
             {
                 __ptr = ptr;
             }
             self_type operator++()
             {
-
+                __ptr++;
+                return *this;
             }
             self_type operator++(int junk)
             {
-
+                // look at notes on skype
             }
             const value_type& operator*() const
             {
-
+                std::cout << "purple1\n";
             }
             const value_type* operator->() const
             {
-
+                std::cout << "purple2\n";
             }
             bool operator==(const self_type& rhs) const
             {
-
+                if (__ptr == rhs.__ptr)
+                    return true;
+                else
+                    return false;
             }
             bool operator!=(const self_type& rhs) const
             {
-
+                if (__ptr == rhs.__ptr)
+                    return false;
+                else
+                    return true;
             }
 
         private:
@@ -122,13 +151,19 @@ namespace CS2312 {
         fixed_array(size_type size)
         {
             __size = size;
-
+            __data = new T[__size];
         }
 
         fixed_array(std::initializer_list<T> list)
         {
-            __size == list.size();
-
+            // vector was in the header files.
+            std::vector<T> myvector(list);
+            __size = myvector.size();
+            __data = new T[__size];
+            for (int i=0; i < __size; i++)
+            {
+                __data[i] = myvector[i];
+            }
         }
 
         ~fixed_array()
@@ -143,32 +178,32 @@ namespace CS2312 {
 
         T& operator[](size_type index)
         {
-
+            return __data[index];
         }
 
         const T& operator[](size_type index) const
         {
-
+            return __data[index];
         }
 
         iterator begin()
         {
-
+            return iterator(__data);
         }
 
         iterator end()
         {
-
+            return iterator(__data + __size);
         }
 
         const_iterator begin() const
         {
-
+            return const_iterator(__data);
         }
 
         const_iterator end() const
         {
-
+            return const_iterator(__data + __size);
         }
 
     private:
