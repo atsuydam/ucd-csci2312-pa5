@@ -54,7 +54,10 @@ namespace CS2312 {
             {
                 // junk. Yeah, that's f'king descriptive. Is it where I am starting. + int would be adding.
                 // am I starting at junk?
-                std::cout << "GREEN\n";
+                for (int i=0; i<=junk; i++)
+                {
+                    __ptr++;
+                }
                 return *this;
             }
             reference operator*()
@@ -62,12 +65,12 @@ namespace CS2312 {
                 // send back only the data that the pointer is point to.
                 // but it doesn't like that because iterator doesn't have a field data.
                 // iterator_catagory;
-                std::cout << "blue1\n";
+                return *__ptr;
             }
             pointer operator->()
             {
                 // pointing at something. The book doesn't even mention these
-                std::cout << "blue4\n";
+                return this->__ptr;
             }
             bool operator==(const self_type& rhs) const
             {
@@ -120,11 +123,11 @@ namespace CS2312 {
             }
             const value_type& operator*() const
             {
-                std::cout << "purple1\n";
+                return *__ptr;
             }
             const value_type* operator->() const
             {
-                std::cout << "purple2\n";
+                return this->__ptr;
             }
             bool operator==(const self_type& rhs) const
             {
