@@ -269,7 +269,7 @@ void test_iterator_usage(ErrorContext &ec, unsigned int numRuns) {
         ec.DESC("prefix vs postfix");
 
         {
-            const size_t SIZE = 100;
+            const size_t SIZE = 10;
             fixed_array<unsigned> mockarray(SIZE);
             for (auto &mockelem: mockarray) mockelem = 5;
 

@@ -14,7 +14,6 @@ namespace CS2312 {
             if (first < second) {
                 return true;
             }
-            else
             return false;
         }
     };

@@ -52,13 +52,9 @@ namespace CS2312 {
             }
             self_type operator++(int junk)
             {
-                // junk. Yeah, that's f'king descriptive. Is it where I am starting. + int would be adding.
-                // am I starting at junk?
-                for (int i=0; i<=junk; i++)
-                {
-                    __ptr++;
-                }
-                return *this;
+                self_type p = *this;
+                __ptr++;
+                return p;
             }
             reference operator*()
             {
@@ -119,7 +115,11 @@ namespace CS2312 {
             }
             self_type operator++(int junk)
             {
-                // look at notes on skype
+                for (int i=0; i<junk; i++)
+                {
+                    __ptr++;
+                }
+                return *this;
             }
             const value_type& operator*() const
             {
