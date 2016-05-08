@@ -17,5 +17,18 @@ namespace CS2312 {
             return false;
         }
     };
+
+    template <>
+    class less<const char*> {
+    public:
+        less () {}
+        bool operator ()(const char *first, const char *second) {
+
+            if (*first < *second) {
+                return true;
+            }
+            return false;
+        }
+    };
 }
 #endif //PROJECT_LESS_FUNCTOR_H
